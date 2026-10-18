@@ -1,0 +1,129 @@
+<Aaron>PT:LearnGit$ ls 
+First_usage_log.log		Git_Usage.md			git_relationship.png
+Git_Responsitory.png		Second_usage_log.log		git_reset_three_model.png
+<Aaron>PT:LearnGit$ cd ..
+<Aaron>PT:Project$ ls
+FirstDemo	LearnGit
+<Aaron>PT:Project$ git init demorepo
+Initialized empty Git repository in /Users/aaron/Aaron/SelfStudy/GitHub/Project/demorepo/.git/
+<Aaron>PT:Project$ cd demorepo/
+<Aaron>PT:demorepo$ echo 111 > file1.txt
+<Aaron>PT:demorepo$ echo 222 > file2.txt
+<Aaron>PT:demorepo$ echo 333 > file3.txt
+<Aaron>PT:demorepo$ git add file1.txt 
+<Aaron>PT:demorepo$ git commit -m "commit1"
+[main (root-commit) bfa647f] commit1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+<Aaron>PT:demorepo$ git add file2.txt 
+<Aaron>PT:demorepo$ git commit -m "commit2"
+[main 299f9ec] commit2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+<Aaron>PT:demorepo$ git add file3.txt 
+<Aaron>PT:demorepo$ git commit -m "commit3"
+[main c0092ef] commit3
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+<Aaron>PT:demorepo$ git log --oneline
+c0092ef (HEAD -> main) commit3
+299f9ec commit2
+bfa647f commit1
+<Aaron>PT:demorepo$ cd ..
+<Aaron>PT:Project$ ls
+FirstDemo	LearnGit	demorepo
+<Aaron>PT:Project$ cp -rf demorepo demorepo-soft
+<Aaron>PT:Project$ cp -rf demorepo demorepo-hard
+<Aaron>PT:Project$ cp -rf demorepo demorepo-mixed
+<Aaron>PT:Project$ cd demorepo-soft/
+<Aaron>PT:demorepo-soft$ git reset --soft 299f9ec
+<Aaron>PT:demorepo-soft$ git log --oneline
+299f9ec (HEAD -> main) commit2
+bfa647f commit1
+<Aaron>PT:demorepo-soft$ ls
+file1.txt	file2.txt	file3.txt
+<Aaron>PT:demorepo-soft$ git ls-files
+file1.txt
+file2.txt
+file3.txt
+<Aaron>PT:demorepo-soft$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   file3.txt
+
+<Aaron>PT:demorepo-soft$ cd ..
+<Aaron>PT:Project$ ls
+FirstDemo	LearnGit	demorepo	demorepo-hard	demorepo-mixed	demorepo-soft
+<Aaron>PT:Project$ cd demorepo-hard/
+<Aaron>PT:demorepo-hard$ git reset --herd HEAD^
+error: unknown option `herd'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <pathspec>...
+   or: git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<pathspec>...]
+
+    -q, --quiet           be quiet, only report errors
+    --no-refresh          skip refreshing the index after reset
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+<Aaron>PT:demorepo-hard$ git reset --hard HEAD^
+HEAD is now at 299f9ec commit2
+<Aaron>PT:demorepo-hard$ git log --oneline
+299f9ec (HEAD -> main) commit2
+bfa647f commit1
+<Aaron>PT:demorepo-hard$ git reset --hard HEAD^
+HEAD is now at bfa647f commit1
+<Aaron>PT:demorepo-hard$ git log --oneline
+bfa647f (HEAD -> main) commit1
+<Aaron>PT:demorepo-hard$ ls
+file1.txt
+<Aaron>PT:demorepo-hard$ git ls-files
+file1.txt
+<Aaron>PT:demorepo-hard$ cd ..
+<Aaron>PT:Project$ ls 
+FirstDemo	LearnGit	demorepo	demorepo-hard	demorepo-mixed	demorepo-soft
+<Aaron>PT:Project$ cd ./demorepo-mixed/
+<Aaron>PT:demorepo-mixed$ ls
+file1.txt	file2.txt	file3.txt
+<Aaron>PT:demorepo-mixed$ git reset HEAD^
+<Aaron>PT:demorepo-mixed$ git log --oneline
+299f9ec (HEAD -> main) commit2
+bfa647f commit1
+<Aaron>PT:demorepo-mixed$ ls
+file1.txt	file2.txt	file3.txt
+<Aaron>PT:demorepo-mixed$ git ls-files
+file1.txt
+file2.txt
+<Aaron>PT:demorepo-mixed$ git reflog
+299f9ec (HEAD -> main) HEAD@{0}: reset: moving to HEAD^
+c0092ef HEAD@{1}: commit: commit3
+299f9ec (HEAD -> main) HEAD@{2}: commit: commit2
+bfa647f HEAD@{3}: commit (initial): commit1
+<Aaron>PT:demorepo-mixed$ git reset --hard 299f9ec
+HEAD is now at 299f9ec commit2
+<Aaron>PT:demorepo-mixed$ git --oneline
+unknown option: --oneline
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+<Aaron>PT:demorepo-mixed$ git log --oneline
+299f9ec (HEAD -> main) commit2
+bfa647f commit1
+<Aaron>PT:demorepo-mixed$ git reset --hard 299f9ec
+HEAD is now at 299f9ec commit2
+<Aaron>PT:demorepo-mixed$ 

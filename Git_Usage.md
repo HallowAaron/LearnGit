@@ -465,3 +465,47 @@ version regression
 ```
 
 <img src="/Users/aaron/Aaron/SelfStudy/GitHub/Project/LearnGit/git_reset_three_model.png">
+
+
+
+**git ls-files**
+
+```
+查看暂存区的文件
+<Aaron>PT:demorepo-soft$ git ls-files
+file1.txt
+file2.txt
+file3.txt
+
+<Aaron>PT:demorepo-soft$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   file3.txt
+
+<Aaron>PT:demorepo-soft$ 
+```
+
+
+
+**git reset --hard HEAD^**
+
+```
+回退到上一个版本，并且强制清除暂存区和工作区的文件
+ls: 查看工作区文件
+git ls-files: 查看暂存区文件
+```
+
+
+
+**git reflot**
+
+```
+查看历史记录
+<Aaron>PT:demorepo-mixed$ git reflog
+299f9ec (HEAD -> main) HEAD@{0}: reset: moving to HEAD^
+c0092ef HEAD@{1}: commit: commit3
+299f9ec (HEAD -> main) HEAD@{2}: commit: commit2
+bfa647f HEAD@{3}: commit (initial): commit1
+```
+
