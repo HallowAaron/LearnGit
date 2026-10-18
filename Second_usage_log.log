@@ -1,0 +1,80 @@
+<Aaron>PT:LearnGit$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git_Usage.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	First_usage_log.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   First_usage_log.log
+	modified:   Git_Usage.md
+
+<Aaron>PT:LearnGit$ git commit -m "add 'First_usage_log.log' file" 
+[main 0215abb] add 'First_usage_log.log' file
+ 2 files changed, 493 insertions(+), 1 deletion(-)
+ create mode 100644 First_usage_log.log
+<Aaron>PT:LearnGit$ git log
+commit 0215abb7b3df72139c71e9b30b8034eb74c01f15 (HEAD -> main)
+Author: HallowAaron <2294966591@qq.com>
+Date:   Sun Oct 18 16:45:53 2026 +0800
+
+    add 'First_usage_log.log' file
+
+commit f1b614d8d00d01f6f221707c970dc48396485797
+Author: HallowAaron <2294966591@qq.com>
+Date:   Sun Oct 18 16:43:47 2026 +0800
+
+    first commit
+<Aaron>PT:LearnGit$ git log --oneline
+0215abb (HEAD -> main) add 'First_usage_log.log' file
+f1b614d first commit
+<Aaron>PT:LearnGit$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git_Usage.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_reset_three_model.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   Git_Usage.md
+	new file:   git_reset_three_model.png
+
+<Aaron>PT:LearnGit$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   Git_Usage.md
+	new file:   git_reset_three_model.png
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   git_reset_three_model.png
+
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   Git_Usage.md
+	new file:   git_reset_three_model.png
+
+<Aaron>PT:LearnGit$ 
