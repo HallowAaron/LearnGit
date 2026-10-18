@@ -38,6 +38,22 @@
 
 # [Start](https://www.youtube.com/watch?v=PN1k1CLXtlw&t=3166s)
 
+```
+HEAD 表示 git 最新提交的一个节点
+
+HEAD 是一个引用(指针), HEAD^ 表示一个相对提交的表达式
+
+HADE^ 是经过 HEAD 计算得到的
+
+
+
+HEAD: 表示当前所在的位置, 通常只想当前分支的最新提交
+
+HEAD^: HEAD 的第一个父节点, 也就是上一个提交的节点
+
+HEAD~1: 和 HEAD^ 基本等价
+```
+
 
 
 ### 1. Create Repository 
@@ -508,4 +524,299 @@ c0092ef HEAD@{1}: commit: commit3
 299f9ec (HEAD -> main) HEAD@{2}: commit: commit2
 bfa647f HEAD@{3}: commit (initial): commit1
 ```
+
+
+
+
+
+
+
+
+
+---
+
+#### git diff
+
+<img src="/Users/aaron/Aaron/SelfStudy/GitHub/Project/LearnGit/Git_diff.png">
+
+```
+如果没有参数的话，默认是比较: 工作区和暂存区之间的差异
+<Aaron>PT:demorepo$ echo "new file3 contnet" > file3.txt 
+<Aaron>PT:demorepo$ git diff
+diff --git a/file3.txt b/file3.txt
+index 55bd0ac..f5ca10d 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1 @@
+-333
++new file3 contnet
+<Aaron>PT:demorepo$ git add .
+<Aaron>PT:demorepo$ git diff
+<Aaron>PT:demorepo$ 
+
+
+### index 55bd0ac..f5ca10d 100644
+55bd0ac..f5ca10d: 表示的是 Hash 值，中间位省略
+100644: 表示文件的权限
+```
+
+
+
+git diff HEAD
+
+```
+工作区和版本库之间的差异
+<Aaron>PT:demorepo$ git diff HEAD
+diff --git a/file3.txt b/file3.txt
+index 55bd0ac..f5ca10d 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1 @@
+-333
++new file3 contnet
+
+```
+
+git diff --cached
+
+```
+工作区和缓存区之间的差异
+<Aaron>PT:demorepo$ git diff --cached
+diff --git a/file3.txt b/file3.txt
+index 55bd0ac..f5ca10d 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1 @@
+-333
++new file3 contnet
+<Aaron>PT:demorepo$ git commit -m "commit4"
+[main daf2fb2] commit4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+<Aaron>PT:demorepo$ git diff --cached
+<Aaron>PT:demorepo$ git diff HEAD
+<Aaron>PT:demorepo$ 
+<Aaron>PT:demorepo$ git diff 299f9ec bfa647f
+diff --git a/file2.txt b/file2.txt
+deleted file mode 100644
+index c200906..0000000
+--- a/file2.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-222
+<Aaron>PT:demorepo$ git diff daf2fb2 c0092ef
+diff --git a/file3.txt b/file3.txt
+index f5ca10d..55bd0ac 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1 @@
+-new file3 contnet
++333
+<Aaron>PT:demorepo$ 
+<Aaron>PT:demorepo$ git diff HEAD HEAD^
+diff --git a/file3.txt b/file3.txt
+index f5ca10d..55bd0ac 100644
+--- a/file3.txt
++++ b/file3.txt
+@@ -1 +1 @@
+-new file3 contnet
++333
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
