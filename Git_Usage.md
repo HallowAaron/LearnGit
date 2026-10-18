@@ -174,7 +174,216 @@ Changes to be committed:
 	new file:   Git_Usage.md
 	new file:   git_relationship.png
 
-<Aaron>PT:LearnGit$  
+<Aaron>PT:LearnGit$ git add git_relationship.png
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+	new file:   git_relationship.png
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git_Usage.md
+
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+	new file:   git_relationship.png
+
+<Aaron>PT:LearnGit$ git rm  git_relationship.png
+error: the following file has changes staged in the index:
+    git_relationship.png
+(use --cached to keep the file, or -f to force removal)
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+	new file:   git_relationship.png
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git_Usage.md
+
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+	new file:   git_relationship.png
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Git_Usage.md
+	deleted:    git_relationship.png
+
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_relationship.png
+
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+	new file:   git_relationship.png
+
+<Aaron>PT:LearnGit$ git rm git_relationship.png
+error: the following file has changes staged in the index:
+    git_relationship.png
+(use --cached to keep the file, or -f to force removal)
+<Aaron>PT:LearnGit$ git rm -r git_relationship.png
+error: the following file has changes staged in the index:
+    git_relationship.png
+(use --cached to keep the file, or -f to force removal)
+<Aaron>PT:LearnGit$ git git_relationship.png git_relationship.png
+git: 'git_relationship.png' is not a git command. See 'git --help'.
+<Aaron>PT:LearnGit$ git --cached git_relationship.png
+unknown option: --cached
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+<Aaron>PT:LearnGit$ git rm --cached git_relationship.png
+rm 'git_relationship.png'
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_relationship.png
+
+<Aaron>PT:LearnGit$ git rm -f git_relationship.png
+fatal: pathspec 'git_relationship.png' did not match any files
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_relationship.png
+
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git rm -f git_relationship.png
+rm 'git_relationship.png'
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_relationship.png
+
+<Aaron>PT:LearnGit$ git add .
+<Aaron>PT:LearnGit$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   Git_Responsitory.png
+	new file:   Git_Usage.md
+	new file:   git_relationship.png
+
+<Aaron>PT:LearnGit$ git commit -m "first commit"
+[main (root-commit) f1b614d] first commit
+ 4 files changed, 183 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 Git_Responsitory.png
+ create mode 100644 Git_Usage.md
+ create mode 100644 git_relationship.png
+<Aaron>PT:LearnGit$ git status
+On branch main
+nothing to commit, working tree clean 
 ```
 
 
